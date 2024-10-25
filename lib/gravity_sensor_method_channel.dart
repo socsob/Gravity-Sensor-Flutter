@@ -10,13 +10,15 @@ class MethodChannelGravitySensor extends GravitySensorPlatform {
 
   @override
   Stream<GravityEvent> get gravityEvents {
-    return _gravityEvents ??= _gravityEventChannel.receiveBroadcastStream().map((dynamic event) {
-      final list = event.cast<double>();
-      return GravityEvent(
-        list[0]!,
-        list[1]!,
-        list[2]!,
-      );
-    });
+    return _gravityEvents ??= _gravityEventChannel.receiveBroadcastStream().map(
+      (dynamic event) {
+        final list = event.cast<double>();
+        return GravityEvent(
+          list[0]!,
+          list[1]!,
+          list[2]!,
+        );
+      },
+    );
   }
 }

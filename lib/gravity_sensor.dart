@@ -2,6 +2,7 @@ import 'gravity_sensor_platform_interface.dart';
 
 export 'src/gravity_event.dart';
 
+/// API for accessing information from gravity sensor of the device.
 class GravitySensor extends GravitySensorPlatform {
   GravitySensor._();
 

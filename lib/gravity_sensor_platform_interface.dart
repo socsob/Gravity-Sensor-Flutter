@@ -5,6 +5,7 @@ import 'src/gravity_event.dart';
 
 export 'src/gravity_event.dart';
 
+/// The common platform interface for gravity sensor.
 abstract class GravitySensorPlatform extends PlatformInterface {
   /// Constructs a GravitySensorPlatform.
   GravitySensorPlatform() : super(token: _token);
