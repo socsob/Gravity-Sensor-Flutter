@@ -13,11 +13,15 @@ class MethodChannelGravitySensor extends GravitySensorPlatform {
   Stream<GravityEvent> get gravityEvents {
     return _gravityEvents ??= _gravityEventChannel.receiveBroadcastStream().map(
       (dynamic event) {
+        if (event is! List<Object?> || event.length < 3) {
+          throw FormatException('Invalid event format');
+        }
         final list = event.cast<double>();
+
         return GravityEvent(
-          list[0]!,
-          list[1]!,
-          list[2]!,
+          list[0],
+          list[1],
+          list[2],
         );
       },
     );
