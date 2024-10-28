@@ -1,9 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'gravity_sensor_method_channel.dart';
-import 'src/gravity_event.dart';
-
-export 'src/gravity_event.dart';
+import 'models/gravity_event.dart';
 
 /// The common platform interface for gravity sensor.
 abstract class GravitySensorPlatform extends PlatformInterface {

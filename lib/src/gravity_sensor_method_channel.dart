@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 
 import 'gravity_sensor_platform_interface.dart';
+import 'models/gravity_event.dart';
 
 /// An implementation of [GravitySensorPlatform] that uses method channels.
 class MethodChannelGravitySensor extends GravitySensorPlatform {
