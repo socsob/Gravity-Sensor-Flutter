@@ -1,5 +1,5 @@
 name: gravity_sensor
-version: 1.0.0
+version: 1.0.1
 description: Flutter plugin to access the gravity sensor of the device.
 homepage: https://madbrains.ru/
 repository: https://github.com/MadBrains/Gravity-Sensor-Flutter
