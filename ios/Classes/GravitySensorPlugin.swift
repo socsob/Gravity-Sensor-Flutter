@@ -3,6 +3,9 @@ import UIKit
 import CoreMotion
 import Foundation
 
+let GRAVITY = -9.81
+
+
 public class GravitySensorPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let GRAVITY_SENSOR_CHANNEL_NAME = "gravity_sensor"
@@ -28,7 +31,7 @@ class GravitySensorStreamHandler: NSObject, FlutterStreamHandler {
             motionManager.deviceMotionUpdateInterval = 0.1
             motionManager.startDeviceMotionUpdates(to: queue) { (data, error) in
                 if data != nil {
-                    sink([data!.gravity.x, data!.gravity.y, data!.gravity.z])
+                    sink([data!.gravity.x * GRAVITY, data!.gravity.y * GRAVITY, data!.gravity.z * GRAVITY])
                 }
             }
         } else {
